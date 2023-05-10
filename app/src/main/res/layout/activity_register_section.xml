@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register_section"
+    android:background="@drawable/register"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/txtRegFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="200dp"
+        android:inputType="textPersonName"
+        android:hint="First Name:"
+
+        />
+
+    <EditText
+        android:id="@+id/txtRegLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="30dp"
+        android:inputType="textPersonName"
+        android:hint="Last Name:"
+
+        />
+
+    <EditText
+        android:id="@+id/txtRegBday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="30dp"
+        android:inputType="textPersonName"
+        android:hint="Birthdate:"
+
+        />
+
+    <EditText
+        android:id="@+id/txtRegUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="30dp"
+        android:inputType="textPersonName"
+        android:hint="User:"
+
+        />
+
+    <EditText
+        android:id="@+id/txtRegPassWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="30dp"
+        android:inputType="textPersonName"
+        android:hint="FirstName:"
+
+        />
+
+    <Button
+        android:id="@+id/btnStartTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="Start Managing Your Task"
+
+
+
+        />
+
+
+</LinearLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenu"
+    android:background="@drawable/home"
+    android:orientation="horizontal"
+    >
+
+    <TextView
+        android:id="@+id/txtManage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage"
+        android:drawableTop="@drawable/manage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/txtTrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Track"
+        android:drawableTop="@drawable/track"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        tools:layout_editor_absoluteX="130dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="65dp"
+        />
+
+    <TextView
+        android:id="@+id/txtCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calendar"
+        android:drawableTop="@drawable/calendar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        tools:layout_editor_absoluteX="241dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="70dp"
+        />
+
+    <TextView
+        android:id="@+id/txtScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan"
+        android:drawableTop="@drawable/scan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        tools:layout_editor_absoluteX="337dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="65dp"
+        />
+
+</LinearLayout>
