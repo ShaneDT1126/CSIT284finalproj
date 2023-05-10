@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/managesection"
+    tools:context=".ManageSection">
+
+    <Button
+        android:id="@+id/btnCreateTask"
+        android:layout_width="253dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="348dp"
+        android:text="Create Task"
+        app:backgroundTint="@color/material_dynamic_primary30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGoalSet"
+        android:layout_width="250dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="432dp"
+        android:text="Goal Setting"
+        app:backgroundTint="@color/material_dynamic_primary30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnBudgetPlan"
+        android:layout_width="248dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="512dp"
+        android:text="Budget Planner"
+        app:backgroundTint="@color/material_dynamic_primary30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnBackToMenu1"
+        android:layout_width="120dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="60dp"
+        android:text="Go Back"
+        app:backgroundTint="@color/material_dynamic_primary30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
