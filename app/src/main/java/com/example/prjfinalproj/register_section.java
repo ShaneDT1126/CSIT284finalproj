@@ -18,6 +18,8 @@ public class register_section extends AppCompatActivity implements View.OnClickL
     EditText regUsername;
     EditText regPassWord;
 
+    boolean bool = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,28 +41,36 @@ public class register_section extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
         checkDataEntered();
-
-        Intent intent = new Intent(register_section.this,MainMenu.class );
-        startActivity(intent);
+        if(bool) {
+            Intent intent = new Intent(register_section.this, MainMenu.class);
+            startActivity(intent);
+        }
 
     }
     boolean isEmpty(EditText text) {
         CharSequence str = text.getText().toString();
         return TextUtils.isEmpty(str);
     }
-    void checkDataEntered(){
+    boolean checkDataEntered(){
         if (isEmpty(regFirstName)) {
             regFirstName.setError("First name is required!");
+            bool = false;
         }
         if (isEmpty(regLastName)) {
             regLastName.setError("Last name is required!");
+            bool = false;
         }
         if (isEmpty(regUsername)) {
             regUsername.setError("Username is required!");
+            bool = false;
         }
         if (isEmpty(regPassWord)) {
             regPassWord.setError("Password is required!");
+            bool = false;
         }
-
+        if(!isEmpty(regFirstName) && !isEmpty(regLastName) && !isEmpty(regUsername) && !isEmpty(regPassWord)){
+            bool = true;
+        }
+        return bool;
     }
 }
