@@ -12,6 +12,7 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,12 +20,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnLogin;
     TextView txtForgetPass;
     TextView txtSignUp;
+    EditText username;
+    EditText password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       btnLogin =(Button) findViewById(R.id.btnLogin);
+        setupUI();
+
+       btnLogin = (Button) findViewById(R.id.btnLogin);
        btnLogin.setOnClickListener(this);
 
 
@@ -41,6 +47,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
+    private void setupUI() {
+        username = findViewById(R.id.Username);
+        password = findViewById(R.id.Password);
+        btnLogin = findViewById(R.id.btnLogin);
+    }
+
 
     @Override
     public void onClick(View view) {

@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginTop="30dp"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:hint="Password:"
 
         />
@@ -71,9 +71,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
         android:text="Start Managing Your Task"
-
-
-
         />
 
 

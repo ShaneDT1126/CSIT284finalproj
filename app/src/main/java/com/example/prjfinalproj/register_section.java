@@ -42,7 +42,7 @@ public class register_section extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         checkDataEntered();
         if(bool) {
-            Intent intent = new Intent(register_section.this, MainMenu.class);
+            Intent intent = new Intent(register_section.this, MainActivity.class);
             startActivity(intent);
         }
 
