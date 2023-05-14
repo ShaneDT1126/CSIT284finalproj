@@ -6,13 +6,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class register_section extends AppCompatActivity implements View.OnClickListener {
     Button btnStartTask;
+    EditText regFirstName;
+    EditText regLastName;
+    EditText regBday;
+    EditText regUsername;
+    EditText regPassWord;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_section);
+
+        regFirstName = findViewById(R.id.txtRegFirstName);
+        regLastName = findViewById(R.id.txtRegLastName);
+        regBday = findViewById(R.id.txtRegBday);
+        regUsername = findViewById(R.id.txtRegUsername);
+        regPassWord = findViewById(R.id.txtRegPassWord);
 
         btnStartTask =(Button) findViewById(R.id.btnStartTask);
         btnStartTask.setOnClickListener(this);
