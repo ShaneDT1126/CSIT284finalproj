@@ -39,6 +39,7 @@ public class register_section extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
         checkDataEntered();
+
         Intent intent = new Intent(register_section.this,MainMenu.class );
         startActivity(intent);
 
