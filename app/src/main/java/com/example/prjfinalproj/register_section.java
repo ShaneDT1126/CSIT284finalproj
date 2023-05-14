@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class register_section extends AppCompatActivity implements View.OnClickListener {
     Button btnStartTask;
@@ -36,8 +38,28 @@ public class register_section extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
+        checkDataEntered();
         Intent intent = new Intent(register_section.this,MainMenu.class );
         startActivity(intent);
+
+    }
+    boolean isEmpty(EditText text) {
+        CharSequence str = text.getText().toString();
+        return TextUtils.isEmpty(str);
+    }
+    void checkDataEntered(){
+        if (isEmpty(regFirstName)) {
+            regFirstName.setError("First name is required!");
+        }
+        if (isEmpty(regLastName)) {
+            regLastName.setError("Last name is required!");
+        }
+        if (isEmpty(regUsername)) {
+            regUsername.setError("Username is required!");
+        }
+        if (isEmpty(regPassWord)) {
+            regPassWord.setError("Password is required!");
+        }
 
     }
 }
