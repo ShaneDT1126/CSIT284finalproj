@@ -1,14 +1,16 @@
-package com.example.prjfinalproj;
+package com.example.prjfinalproj.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ScanSection extends AppCompatActivity {
+import com.example.prjfinalproj.R;
+
+public class CalendarSection extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scan_section);
+        setContentView(R.layout.activity_calendar_section);
     }
 }

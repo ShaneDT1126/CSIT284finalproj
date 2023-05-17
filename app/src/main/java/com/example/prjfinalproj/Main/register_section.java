@@ -1,4 +1,4 @@
-package com.example.prjfinalproj;
+package com.example.prjfinalproj.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.example.prjfinalproj.R;
 
 public class register_section extends AppCompatActivity implements View.OnClickListener {
     Button btnStartTask;

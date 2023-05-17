@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/taskbg">
 
     <TextView
         android:id="@+id/taskText"
@@ -17,7 +18,7 @@
         android:textSize="32sp"
         android:layout_marginLeft="16dp" />
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tasksRecyclerView"
         android:layout_below="@+id/taskText"
@@ -32,9 +33,8 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="32dp"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:layout_alignParentRight="true"
         android:src="@drawable/baseline_post_add_24"
-        />
+        android:layout_alignParentRight="true" />
 
 
 

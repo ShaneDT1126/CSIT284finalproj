@@ -1,14 +1,16 @@
-package com.example.prjfinalproj;
+package com.example.prjfinalproj.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ManageSection extends AppCompatActivity {
+import com.example.prjfinalproj.R;
+
+public class ScanSection extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_section);
+        setContentView(R.layout.activity_scan_section);
     }
 }

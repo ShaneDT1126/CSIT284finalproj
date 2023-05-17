@@ -12,31 +12,31 @@
         android:theme="@style/Theme.PrjFinalProj"
         tools:targetApi="31">
         <activity
-            android:name=".Tasks"
+            android:name=".Main.Tasks"
             android:exported="false" />
         <activity
-            android:name=".SettingsSection"
+            android:name=".Main.SettingsSection"
             android:exported="false" />
         <activity
-            android:name=".ScanSection"
+            android:name=".Main.ScanSection"
             android:exported="false" />
         <activity
-            android:name=".CalendarSection"
+            android:name=".Main.CalendarSection"
             android:exported="false" />
         <activity
-            android:name=".TrackSection"
+            android:name=".Main.TrackSection"
             android:exported="false" />
         <activity
-            android:name=".ManageSection"
+            android:name=".Main.ManageSection"
             android:exported="false" />
         <activity
-            android:name=".MainMenu"
+            android:name=".Main.MainMenu"
             android:exported="false" />
         <activity
-            android:name=".register_section"
+            android:name=".Main.register_section"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

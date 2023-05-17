@@ -1,4 +1,4 @@
-package com.example.prjfinalproj;
+package com.example.prjfinalproj.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.prjfinalproj.R;
 
 public class MainMenu extends AppCompatActivity implements View.OnClickListener {
     TextView txtManage;

@@ -1,8 +1,10 @@
-package com.example.prjfinalproj;
+package com.example.prjfinalproj.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.prjfinalproj.R;
 
 public class SettingsSection extends AppCompatActivity {
 
