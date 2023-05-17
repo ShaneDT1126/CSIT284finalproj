@@ -15,7 +15,6 @@
         android:layout_height="58dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-
         android:layout_marginBottom="352dp"
         android:text="View Details Here..."
         android:textColor="@color/design_default_color_primary_variant"
@@ -70,7 +69,6 @@
         android:layout_marginRight="4dp"
         android:layout_marginBottom="16dp"
         android:text="Go Back"
-        app:backgroundTint="@color/material_dynamic_primary30"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

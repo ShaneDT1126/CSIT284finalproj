@@ -8,7 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainMenu extends AppCompatActivity implements View.OnClickListener {
-    TextView txtManage,txtTrack,txtCalendar,txtScan,txtGoToHome,txtNotif;
+    TextView txtManage;
+    TextView txtTrack,txtCalendar,txtScan,txtGoToHome,txtNotif;
 
 
     @Override
@@ -16,12 +17,12 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        txtManage = (TextView)findViewById(R.id.txtManage);
-        txtTrack = (TextView) findViewById(R.id.txtTrack);
-        txtCalendar = (TextView) findViewById(R.id.txtCalendar);
-        txtScan =(TextView) findViewById(R.id.txtScan);
-        txtGoToHome = (TextView) findViewById(R.id.txtGoToHome);
-        txtNotif = (TextView) findViewById(R.id.txtNotif);
+        txtManage = findViewById(R.id.txtManage);
+        txtTrack = findViewById(R.id.txtTrack);
+        txtCalendar = findViewById(R.id.txtCalendar);
+        txtScan = findViewById(R.id.txtScan);
+        txtGoToHome = findViewById(R.id.txtGoToHome);
+        txtNotif = findViewById(R.id.txtNotif);
 
         txtManage.setOnClickListener(this);
         txtTrack.setOnClickListener(this);
