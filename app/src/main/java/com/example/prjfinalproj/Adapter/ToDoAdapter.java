@@ -25,10 +25,6 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
     private Tasks tasks;
     private DatabaseHandler db;
 
-//
-//    public <tasks> ToDoAdapter(Tasks tasks){
-//        this.tasks = tasks;
-//    }
     public ToDoAdapter(DatabaseHandler db, Tasks tasks){
         this.db = db;
         this.tasks = tasks;
@@ -36,7 +32,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
 
     public void setTasks(List<ToDoModel> todoList){
         this.todoList = todoList;
-//        notifyDataSetChanged();
+        notifyDataSetChanged();
     }
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View itemView = LayoutInflater.from(parent.getContext())

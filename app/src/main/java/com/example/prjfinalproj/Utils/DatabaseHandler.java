@@ -15,7 +15,7 @@ import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-    private static final int VERSION = 3;
+    private static final int VERSION = 4;
     private static final String NAME = "toDoListDatabase";
     private static final String TODO_TABLE = "todo";
     private static final String ID = "id";
@@ -53,12 +53,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         cv.put(TASK, task.getTask());
         cv.put(STATUS, 0);
         db.insert(TODO_TABLE, null, cv);
-        long rowId = db.insert(TODO_TABLE, null, cv);
-        if (rowId != -1) {
-            Log.d("DatabaseHandler", "Task inserted successfully. Row ID: " + rowId);
-        } else {
-            Log.e("DatabaseHandler", "Failed to insert task into the database.");
-        }
     }
 
     @SuppressLint("Range")
@@ -97,7 +91,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put(TASK, task);
         db.update(TODO_TABLE, cv, ID + "= ?", new String[] {String.valueOf(id)});
-
     }
 
     public void deleteTask(int id){

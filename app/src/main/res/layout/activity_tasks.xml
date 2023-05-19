@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="Tasks"
+        android:text="TaskView"
         android:textColor="@color/black"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
