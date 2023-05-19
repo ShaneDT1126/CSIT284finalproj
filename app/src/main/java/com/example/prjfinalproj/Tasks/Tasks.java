@@ -1,6 +1,7 @@
 package com.example.prjfinalproj.Tasks;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +14,7 @@ import com.example.prjfinalproj.Model.ToDoModel;
 import com.example.prjfinalproj.R;
 import com.example.prjfinalproj.Utils.DatabaseHandler;
 import com.example.prjfinalproj.Utils.DialogCloseListener;
+import com.example.prjfinalproj.Utils.RecyclerItemTouchHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -45,6 +47,9 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
 
         fab = findViewById(R.id.fab);
 
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(taskAdapter));
+        itemTouchHelper.attachToRecyclerView(taskRecycleView);
+
         taskList = db.getAllTask();
         Collections.reverse(taskList);
         taskAdapter.setTasks(taskList);
@@ -55,6 +60,16 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
                 AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG);
             }
         });
+
+
+        ToDoModel task = new ToDoModel();
+        task.setTask("test");
+        task.setStatus(0);
+        task.setId(1);
+
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
     }
 
 

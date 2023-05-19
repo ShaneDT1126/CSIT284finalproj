@@ -34,8 +34,8 @@ public class AddNewTask extends BottomSheetDialogFragment {
     }
 
     @Override
-    public void onCreate(Bundle SavedInstanceState) {
-        super.onCreate(SavedInstanceState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setStyle(STYLE_NORMAL, R.style.DialogStyle);
     }
 
@@ -50,7 +50,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
         newTaskText = getView().findViewById(R.id.newTaskText);
-        newTaskSaveButton = getView().findViewById(R.id.newTaskButton);
+        newTaskSaveButton = getView().findViewById(R.id.newTaskSaveButton);
 
         db = new DatabaseHandler(getActivity());
         db.openDatabase();

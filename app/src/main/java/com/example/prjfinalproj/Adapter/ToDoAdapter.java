@@ -1,5 +1,6 @@
 package com.example.prjfinalproj.Adapter;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,6 +68,12 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         return n!=0;
     }
 
+    public void deleteItem(int position){
+        ToDoModel item = todoList.get(position);
+        db.deleteTask(item.getId());
+        todoList.remove(position);
+        notifyItemRemoved(position);
+    }
     public void editItem(int position){
         ToDoModel item = todoList.get(position);
         Bundle bundle = new Bundle();
@@ -76,6 +83,11 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         fragment.setArguments(bundle);
         fragment.show(tasks.getSupportFragmentManager(), AddNewTask.TAG);
     }
+
+    public Context getContext() {
+        return tasks;
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder{
         CheckBox task;
 

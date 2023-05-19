@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.prjfinalproj.R;
+import com.example.prjfinalproj.Tasks.Tasks;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnLogin;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_tasks);
 
         setupUI();
 
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch(view.getId()) {
             case R.id.btnLogin:
-            Intent intent = new Intent(this, MainMenu.class);
+            Intent intent = new Intent(this, Tasks.class);
             startActivity(intent);
             break;
 
