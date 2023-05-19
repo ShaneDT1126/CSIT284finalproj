@@ -9,10 +9,10 @@ import android.widget.CompoundButton;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.prjfinalproj.Main.Tasks;
+import com.example.prjfinalproj.Tasks.Tasks;
 import com.example.prjfinalproj.Model.ToDoModel;
 import com.example.prjfinalproj.R;
-import com.example.prjfinalproj.Utils.AddNewTask;
+import com.example.prjfinalproj.Tasks.AddNewTask;
 import com.example.prjfinalproj.Utils.DatabaseHandler;
 
 import java.util.List;
@@ -28,14 +28,14 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
 //    public <tasks> ToDoAdapter(Tasks tasks){
 //        this.tasks = tasks;
 //    }
-    public <tasks> ToDoAdapter(DatabaseHandler db, Tasks tasks){
+    public ToDoAdapter(DatabaseHandler db, Tasks tasks){
         this.db = db;
         this.tasks = tasks;
     }
 
     public void setTasks(List<ToDoModel> todoList){
         this.todoList = todoList;
-        notifyDataSetChanged();
+//        notifyDataSetChanged();
     }
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View itemView = LayoutInflater.from(parent.getContext())

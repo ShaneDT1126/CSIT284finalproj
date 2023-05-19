@@ -12,7 +12,7 @@
         android:theme="@style/Theme.PrjFinalProj"
         tools:targetApi="31">
         <activity
-            android:name=".Main.Tasks"
+            android:name=".Tasks.Tasks"
             android:exported="false" />
         <activity
             android:name=".Main.SettingsSection"

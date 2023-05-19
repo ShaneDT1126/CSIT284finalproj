@@ -1,4 +1,4 @@
-package com.example.prjfinalproj.Main;
+package com.example.prjfinalproj.Tasks;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.prjfinalproj.Main.MainActivity;
 import com.example.prjfinalproj.R;
 
 public class SplashActivity  extends AppCompatActivity {

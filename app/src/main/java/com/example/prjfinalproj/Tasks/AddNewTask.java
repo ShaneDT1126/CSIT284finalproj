@@ -1,4 +1,4 @@
-package com.example.prjfinalproj.Utils;
+package com.example.prjfinalproj.Tasks;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -17,6 +17,8 @@ import androidx.core.content.ContextCompat;
 
 import com.example.prjfinalproj.Model.ToDoModel;
 import com.example.prjfinalproj.R;
+import com.example.prjfinalproj.Utils.DatabaseHandler;
+import com.example.prjfinalproj.Utils.DialogCloseListener;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class AddNewTask extends BottomSheetDialogFragment {
