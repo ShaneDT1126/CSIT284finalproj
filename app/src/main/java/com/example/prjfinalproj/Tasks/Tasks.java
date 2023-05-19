@@ -21,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class Tasks extends AppCompatActivity implements DialogCloseListener {
     private RecyclerView taskRecyclerView;
@@ -33,7 +34,6 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
-//        getSupportActionBar().hide();
 
         db = new DatabaseHandler(this);
         db.openDatabase();
@@ -42,7 +42,7 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
 
         taskRecyclerView = findViewById(R.id.tasksRecyclerView);
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        taskAdapter = new ToDoAdapter(db,this);
+        taskAdapter = new ToDoAdapter(db,Tasks.this);
         taskRecyclerView.setAdapter(taskAdapter);
 
         fab = findViewById(R.id.fab);
@@ -53,28 +53,14 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
         taskList = db.getAllTask();
         Collections.reverse(taskList);
         taskAdapter.setTasks(taskList);
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG);
-
             }
         });
 
-
-
-//        ToDoModel task = new ToDoModel();
-//
-//        task.setTask("testing");
-//        task.setStatus(0);
-//        task.setId(1);
-//        taskList.add(task);
-//        taskList.add(task);
-//        taskList.add(task);
-
     }
-
 
     @Override
     public void handleDialogClose(DialogInterface dialog) {

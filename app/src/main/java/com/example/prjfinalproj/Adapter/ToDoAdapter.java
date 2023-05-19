@@ -46,7 +46,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
 
     public void onBindViewHolder(ViewHolder holder, int pos){
         db.openDatabase();
-        ToDoModel item = todoList.get(pos);
+        final ToDoModel item = todoList.get(pos);
         holder.task.setText(item.getTask());
         holder.task.setChecked(toBoolean(item.getStatus()));
         holder.task.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
