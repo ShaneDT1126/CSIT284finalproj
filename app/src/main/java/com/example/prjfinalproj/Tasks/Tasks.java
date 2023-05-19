@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.prjfinalproj.Adapter.ToDoAdapter;
@@ -22,7 +23,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Tasks extends AppCompatActivity implements DialogCloseListener {
-    private RecyclerView taskRecycleView;
+    private RecyclerView taskRecyclerView;
     private ToDoAdapter taskAdapter;
     private FloatingActionButton fab;
     private List<ToDoModel> taskList;
@@ -32,7 +33,6 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
-
 //        getSupportActionBar().hide();
 
         db = new DatabaseHandler(this);
@@ -40,15 +40,15 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
 
         taskList = new ArrayList<>();
 
-        taskRecycleView = findViewById(R.id.tasksRecyclerView);
-        taskRecycleView.setLayoutManager(new LinearLayoutManager(this));
+        taskRecyclerView = findViewById(R.id.tasksRecyclerView);
+        taskRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         taskAdapter = new ToDoAdapter(db,this);
-        taskRecycleView.setAdapter(taskAdapter);
+        taskRecyclerView.setAdapter(taskAdapter);
 
         fab = findViewById(R.id.fab);
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(taskAdapter));
-        itemTouchHelper.attachToRecyclerView(taskRecycleView);
+        itemTouchHelper.attachToRecyclerView(taskRecyclerView);
 
         taskList = db.getAllTask();
         Collections.reverse(taskList);
@@ -58,18 +58,21 @@ public class Tasks extends AppCompatActivity implements DialogCloseListener {
             @Override
             public void onClick(View view) {
                 AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG);
+
             }
         });
 
 
-        ToDoModel task = new ToDoModel();
-        task.setTask("test");
-        task.setStatus(0);
-        task.setId(1);
 
-        taskList.add(task);
-        taskList.add(task);
-        taskList.add(task);
+//        ToDoModel task = new ToDoModel();
+//
+//        task.setTask("testing");
+//        task.setStatus(0);
+//        task.setId(1);
+//        taskList.add(task);
+//        taskList.add(task);
+//        taskList.add(task);
+
     }
 
 
