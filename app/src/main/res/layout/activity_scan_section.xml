@@ -9,16 +9,28 @@
 
     >
 
+    <ImageView
+        android:id="@+id/imgImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginBottom="18dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/btnCaptureImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
-        android:id="@+id/btnBackToMenu4"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnUploadImg"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
-        android:layout_marginBottom="16dp"
-        android:text="Go Back"
+        android:layout_marginBottom="32dp"
+        android:text="Upload Image"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnCaptureImg"
@@ -27,6 +39,7 @@
         android:layout_marginBottom="100dp"
         android:text="Capture Image"
         android:textSize="15dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

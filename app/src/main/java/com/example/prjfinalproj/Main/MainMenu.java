@@ -1,22 +1,28 @@
 package com.example.prjfinalproj.Main;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.prjfinalproj.R;
+import com.example.prjfinalproj.databinding.ActivityMainBinding;
 
 public class MainMenu extends AppCompatActivity implements View.OnClickListener {
     TextView txtManage;
-    TextView txtTrack,txtCalendar,txtScan,txtGoToHome,txtNotif;
+    TextView txtTrack,txtCalendar,txtScan,txtGoToHome,txtNotif,txtSettingsIcon;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main_menu);
 
         txtManage = findViewById(R.id.txtManage);
@@ -25,6 +31,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
         txtScan = findViewById(R.id.txtScan);
         txtGoToHome = findViewById(R.id.txtGoToHome);
         txtNotif = findViewById(R.id.txtNotif);
+        txtSettingsIcon = (TextView) findViewById(R.id.txtSettingsIcon);
 
         txtManage.setOnClickListener(this);
         txtTrack.setOnClickListener(this);
@@ -32,6 +39,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
         txtScan.setOnClickListener(this);
         txtGoToHome.setOnClickListener(this);
         txtNotif.setOnClickListener(this);
+        txtSettingsIcon.setOnClickListener(this);
     }
 
     @Override
@@ -66,6 +74,31 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
                 Intent i5 = new Intent();
                 startActivity(i5);
                 break;
+
+            case R.id.txtSettingsIcon:
+                Intent i6 = new Intent(MainMenu.this,SettingsSection.class);
+                startActivity(i6);
+                break;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater i = getMenuInflater();
+        i.inflate(R.menu.setting_menu,menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menuSetting:
+                Intent i = new Intent(this,SettingsSection.class);
+                startActivity(i);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
