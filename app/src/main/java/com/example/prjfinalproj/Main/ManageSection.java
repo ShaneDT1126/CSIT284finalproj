@@ -11,7 +11,7 @@ import com.example.prjfinalproj.R;
 import com.example.prjfinalproj.Tasks.Tasks;
 
 public class ManageSection extends AppCompatActivity implements View.OnClickListener{
-    Button btnCreateTask;
+    Button btnCreateTask,btnBudgetPlan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,9 @@ public class ManageSection extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_manage_section);
 
         btnCreateTask = (Button) findViewById(R.id.btnCreateTask);
+        btnBudgetPlan = findViewById(R.id.btnBudgetPlan);
         btnCreateTask.setOnClickListener(this);
+        btnBudgetPlan.setOnClickListener(this);
     }
 
     @Override
@@ -28,6 +30,10 @@ public class ManageSection extends AppCompatActivity implements View.OnClickList
             case R.id.btnCreateTask:
                 Intent intent = new Intent(this, Tasks.class);
                 startActivity(intent);
+                break;
+            case R.id.btnBudgetPlan:
+                Intent i2 = new Intent(ManageSection.this,BudgetPlannerSection.class);
+                startActivity(i2);
                 break;
         }
     }
