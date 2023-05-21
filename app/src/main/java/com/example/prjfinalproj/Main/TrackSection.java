@@ -26,7 +26,7 @@ public class TrackSection extends AppCompatActivity implements View.OnClickListe
         txtAddNewExpense = findViewById(R.id.txtAddNewExpense);
         btnBackToMenu2 = findViewById(R.id.btnBackToMenu2);
 
-        Bundle b = getIntent().getExtras();
+
 
 
 

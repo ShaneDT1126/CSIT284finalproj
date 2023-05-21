@@ -62,31 +62,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtGoToHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginBottom="4dp"
-        android:layout_weight="1"
-        android:drawableTop="@drawable/mainmenuicon"
-        android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtNotif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="77dp"
-        android:layout_marginRight="77dp"
-        android:layout_marginBottom="4dp"
-        android:drawableTop="@drawable/notifs"
-        android:text="Notification"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
         android:id="@+id/txtWelcome"
         android:layout_width="59dp"
         android:layout_height="22dp"
@@ -127,29 +102,16 @@
         app:layout_constraintTop_toBottomOf="@+id/txtWelcomeBack" />
 
     <TextView
-        android:id="@+id/txtViewTasks"
+        android:id="@+id/txtNotifyMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="228dp"
-        android:text="View Details"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="172dp"
+        android:text="Notify!"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtManage" />
-
-    <TextView
-        android:id="@+id/txtProgress"
-        android:layout_width="42dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="92dp"
-
-        android:layout_marginRight="92dp"
-        android:text="100%"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCalendar" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtSettingsIcon"
@@ -157,7 +119,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-
         android:layout_marginTop="7dp"
         android:drawableTop="@drawable/setting_section"
         android:gravity="center_horizontal"
@@ -165,5 +126,17 @@
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtViewCurrentTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginBottom="172dp"
+        android:text="View Current Tasks"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

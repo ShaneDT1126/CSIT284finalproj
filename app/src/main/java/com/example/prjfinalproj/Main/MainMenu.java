@@ -3,20 +3,26 @@ package com.example.prjfinalproj.Main;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-
+import android.widget.Toast;
+import com.example.prjfinalproj.Tasks.Tasks;
 import com.example.prjfinalproj.R;
 import com.example.prjfinalproj.databinding.ActivityMainBinding;
 
 public class MainMenu extends AppCompatActivity implements View.OnClickListener {
     TextView txtManage;
-    TextView txtTrack,txtCalendar,txtScan,txtGoToHome,txtNotif,txtSettingsIcon;
+    TextView txtTrack,txtCalendar,txtScan,txtSettingsIcon,txtNotfiyMe,txtViewCurrentTasks;
 
 
     @Override
@@ -29,17 +35,18 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
         txtTrack = findViewById(R.id.txtTrack);
         txtCalendar = findViewById(R.id.txtCalendar);
         txtScan = findViewById(R.id.txtScan);
-        txtGoToHome = findViewById(R.id.txtGoToHome);
-        txtNotif = findViewById(R.id.txtNotif);
         txtSettingsIcon = (TextView) findViewById(R.id.txtSettingsIcon);
+        txtNotfiyMe = findViewById(R.id.txtNotifyMe);
+        txtViewCurrentTasks =(TextView) findViewById(R.id.txtViewCurrentTasks);
+        createNotificationChannel();
 
         txtManage.setOnClickListener(this);
         txtTrack.setOnClickListener(this);
         txtCalendar.setOnClickListener(this);
         txtScan.setOnClickListener(this);
-        txtGoToHome.setOnClickListener(this);
-        txtNotif.setOnClickListener(this);
         txtSettingsIcon.setOnClickListener(this);
+        txtNotfiyMe.setOnClickListener(this);
+        txtViewCurrentTasks.setOnClickListener(this);
     }
 
     @Override
@@ -64,21 +71,24 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
                 Intent i3 = new Intent(MainMenu.this,ScanSection.class);
                 startActivity(i3);
                 break;
-
-            case R.id.txtGoToHome:
-                Intent i4 = new Intent();
+            case R.id.txtViewCurrentTasks:
+                Intent i4 = new Intent(MainMenu.this,Tasks.class);
                 startActivity(i4);
-                break;
-
-            case R.id.txtNotif:
-                Intent i5 = new Intent();
-                startActivity(i5);
                 break;
 
             case R.id.txtSettingsIcon:
                 Intent i6 = new Intent(MainMenu.this,SettingsSection.class);
                 startActivity(i6);
                 break;
+            case R.id.txtNotifyMe:
+                Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show();
+                Intent i7 = new Intent(MainMenu.this,Reminder.class);
+                PendingIntent pi = PendingIntent.getBroadcast(MainMenu.this,0,i7,0);
+                AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+                long timeAtButtonClick = System.currentTimeMillis();
+                long tenSeconds = 1000 * 10;
+                am.set(AlarmManager.RTC_WAKEUP, timeAtButtonClick + tenSeconds, pi);
         }
     }
 
@@ -100,5 +110,19 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void createNotificationChannel(){
+        if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.O){
+            CharSequence name = "LemubitReminderChannel";
+            String description = "Channel for Lemubit Reminder";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("notifySheesh",name,importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+
+        }
     }
 }
