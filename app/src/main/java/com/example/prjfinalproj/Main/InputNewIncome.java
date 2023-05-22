@@ -3,16 +3,23 @@ package com.example.prjfinalproj.Main;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.prjfinalproj.R;
 
 public class InputNewIncome extends AppCompatActivity implements View.OnClickListener {
     EditText txtNewIncome;
-    Button btnNewIncome,btnReset;
+    Button btnNewIncome;
+    SharedPreferences sharedPreferences;
+
+    private static final String SHARED_PREF_INCOME = "mypref";
+    private static final String KEY_INCOME = "income";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +28,21 @@ public class InputNewIncome extends AppCompatActivity implements View.OnClickLis
 
         txtNewIncome = findViewById(R.id.txtNewIncome);
         btnNewIncome = findViewById(R.id.btnNewIncome);
-        btnReset = findViewById(R.id.btnReset);
+
 
 
         btnNewIncome.setOnClickListener(this);
-        btnReset.setOnClickListener(this);
+
+
+        sharedPreferences = getSharedPreferences(SHARED_PREF_INCOME,MODE_PRIVATE);
+
+        String income = sharedPreferences.getString(KEY_INCOME,null);
+
+        if (income != null){
+            Intent i = new Intent(InputNewIncome.this,TrackSection.class);
+            startActivity(i);
+        }
+
 
     }
 
@@ -33,20 +50,15 @@ public class InputNewIncome extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.btnNewIncome:
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(KEY_INCOME,txtNewIncome.getText().toString());
+                editor.apply();
 
-                String newIncome ="₱"+txtNewIncome.getText();
                 Intent i = new Intent(InputNewIncome.this,TrackSection.class);
-
-
-               i.putExtra("income_data",newIncome);
                 startActivity(i);
+                Toast.makeText(this, "New Income Added!!", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.btnReset:
-                String reset = "₱0";
-                Intent i2 = new Intent(InputNewIncome.this,TrackSection.class);
-                i2.putExtra("income",reset);
-                startActivity(i2);
-                break;
+
         }
     }
 }

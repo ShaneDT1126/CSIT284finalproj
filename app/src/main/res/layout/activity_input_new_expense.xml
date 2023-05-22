@@ -30,13 +30,5 @@
         android:layout_margin="10dp"
 
         />
-    <Button
-        android:id="@+id/btnRes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Reset"
-        android:layout_margin="10dp"
-
-        />
 
 </LinearLayout>

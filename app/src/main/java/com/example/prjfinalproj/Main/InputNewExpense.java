@@ -3,16 +3,24 @@ package com.example.prjfinalproj.Main;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.prjfinalproj.R;
 
 public class InputNewExpense extends AppCompatActivity implements View.OnClickListener {
     EditText txtNewExpense;
-    Button btnNewExpense,btnRes;
+    Button btnNewExpense;
+
+    SharedPreferences sharedPreferences2;
+
+    private static final String SHARED_PREF_EXPENSE = "mypref2";
+    private static final String KEY_EXPENSE = "expense";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,27 +29,28 @@ public class InputNewExpense extends AppCompatActivity implements View.OnClickLi
 
         txtNewExpense = findViewById(R.id.txtNewExpense);
         btnNewExpense = findViewById(R.id.btnNewExpense);
-        btnRes = findViewById(R.id.btnRes);
+
 
         btnNewExpense.setOnClickListener(this);
-        btnRes.setOnClickListener(this);
+
+        sharedPreferences2 =getSharedPreferences(SHARED_PREF_EXPENSE,MODE_PRIVATE);
+        String expense = sharedPreferences2.getString(KEY_EXPENSE,null);
+        if(expense != null){
+            Intent i = new Intent(InputNewExpense.this,TrackSection.class);
+            startActivity(i);
+        }
     }
 
     @Override
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.btnNewExpense:
-                String newExpense = "₱"+txtNewExpense.getText().toString();
+                SharedPreferences.Editor editor = sharedPreferences2.edit();
+                editor.putString(KEY_EXPENSE,txtNewExpense.getText().toString());
+                editor.apply();
                 Intent i = new Intent(InputNewExpense.this,TrackSection.class);
-
-                i.putExtra("expense",newExpense);
                 startActivity(i);
-                break;
-            case R.id.btnRes:
-                String reset = "₱0";
-                Intent i2 = new Intent(InputNewExpense.this,TrackSection.class);
-                i2.putExtra("expense",reset);
-                startActivity(i2);
+                Toast.makeText(this, "New Expense Added", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
