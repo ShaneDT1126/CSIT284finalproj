@@ -30,6 +30,9 @@
             android:name=".Tasks.Tasks"
             android:exported="false" />
         <activity
+            android:name=".GoalSetting.Goals"
+            android:exported="false" />
+        <activity
             android:name=".Main.SettingsSection"
             android:exported="false" />
         <activity

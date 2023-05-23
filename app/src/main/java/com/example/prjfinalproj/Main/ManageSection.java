@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.prjfinalproj.GoalSetting.Goals;
 import com.example.prjfinalproj.R;
 import com.example.prjfinalproj.Tasks.Tasks;
 
 public class ManageSection extends AppCompatActivity implements View.OnClickListener{
-    Button btnCreateTask,btnBudgetPlan, btnBackToMenu1;
+    Button btnCreateTask,btnBudgetPlan, btnBackToMenu1, btnGoalSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,8 @@ public class ManageSection extends AppCompatActivity implements View.OnClickList
         btnCreateTask = (Button) findViewById(R.id.btnCreateTask);
         btnBudgetPlan = findViewById(R.id.btnBudgetPlan);
         btnBackToMenu1 = findViewById(R.id.btnBackToMenu1);
+        btnGoalSet = findViewById(R.id.btnGoalSet);
+        btnGoalSet.setOnClickListener(this);
         btnCreateTask.setOnClickListener(this);
         btnBudgetPlan.setOnClickListener(this);
         btnBackToMenu1.setOnClickListener(this);
@@ -40,6 +43,10 @@ public class ManageSection extends AppCompatActivity implements View.OnClickList
             case R.id.btnBackToMenu1:
                 Intent i3 = new Intent(ManageSection.this,MainMenu.class);
                 startActivity(i3);
+                break;
+            case R.id.btnGoalSet:
+                Intent i4 = new Intent(this, Goals.class);
+                startActivity(i4);
                 break;
         }
     }

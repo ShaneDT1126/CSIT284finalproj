@@ -7,9 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.prjfinalproj.Adapter.ToDoAdapter;
 import com.example.prjfinalproj.Model.ToDoModel;
@@ -17,12 +15,12 @@ import com.example.prjfinalproj.R;
 import com.example.prjfinalproj.Utils.DatabaseHandler;
 import com.example.prjfinalproj.Utils.DialogCloseListener;
 import com.example.prjfinalproj.Utils.RecyclerItemTouchHelper;
+import com.example.prjfinalproj.Utils.RecyclerItemTouchHelper2;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class Tasks extends AppCompatActivity implements DialogCloseListener {
     private RecyclerView taskRecyclerView;

@@ -15,12 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.prjfinalproj.Adapter.ToDoAdapter;
 import com.example.prjfinalproj.GoalSetting.GoalSettingAdapter;
+import com.example.prjfinalproj.GoalSetting.GoalSettingModel;
 import com.example.prjfinalproj.R;
 
-public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
-    private ToDoAdapter adapter;
+public class RecyclerItemTouchHelper2 extends ItemTouchHelper.SimpleCallback {
+    private GoalSettingAdapter adapter;
 
-    public RecyclerItemTouchHelper(ToDoAdapter adapter) {
+    public RecyclerItemTouchHelper2(GoalSettingAdapter adapter) {
         super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         this.adapter = adapter;
 
@@ -36,8 +37,8 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
         final int position = viewHolder.getAdapterPosition();
         if (direction == ItemTouchHelper.LEFT) {
             AlertDialog.Builder builder = new AlertDialog.Builder(adapter.getContext());
-            builder.setTitle("Delete Task");
-            builder.setMessage("Are you sure you want to delete this Task?");
+            builder.setTitle("Delete Goal");
+            builder.setMessage("Are you sure you want to delete this Goal?");
             builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
