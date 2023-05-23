@@ -13,7 +13,7 @@
         android:layout_width="253dp"
         android:layout_height="68dp"
         android:layout_marginTop="348dp"
-        android:text="Create Task"
+        android:text="Task View"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,77 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Main.register_section"
-    android:background="@drawable/register"
-    android:orientation="vertical">
-
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Main.register_section"
+        android:background="@drawable/register"
+        android:orientation="vertical">
+>
+    <!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
 
     <EditText
         android:id="@+id/txtRegFirstName"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="160dp"
         android:inputType="textPersonName"
         android:hint="First Name:"
-
+        android:layout_centerHorizontal="true"
         />
+<!--        android:id="@+id/txtRegFirstName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:ems="10"-->
+<!--        android:hint="First Name:"-->
+<!--        android:inputType="textPersonName" />-->
+
+
+<!--    android:text="Sign In"-->
+<!--    android:gravity="center"-->
+<!--    android:textSize="20dp"-->
+<!--    android:textColor="#000"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_alignParentTop="true"-->
+<!--    android:layout_centerHorizontal="true"-->
+<!--    android:id="@+id/textView" />-->
 
     <EditText
         android:id="@+id/txtRegLastName"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginTop="30dp"
         android:inputType="textPersonName"
         android:hint="Last Name:"
-
+        android:layout_below="@+id/txtRegFirstName"
+        android:layout_centerHorizontal="true"
         />
 
     <EditText
         android:id="@+id/txtRegBday"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginTop="30dp"
         android:inputType="textPersonName"
         android:hint="Birthdate:"
+        android:layout_below="@+id/txtRegLastName"
+        android:layout_centerHorizontal="true"
 
         />
 
     <EditText
         android:id="@+id/txtRegUsername"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginTop="30dp"
         android:inputType="textPersonName"
         android:hint="Username:"
+        android:layout_below="@+id/txtRegBday"
+        android:layout_centerHorizontal="true"
 
         />
 
     <EditText
         android:id="@+id/txtRegPassWord"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginTop="30dp"
         android:inputType="textPassword"
         android:hint="Password:"
+        android:layout_below="@+id/txtRegUsername"
+        android:layout_centerHorizontal="true"
 
         />
 
     <Button
         android:id="@+id/btnStartTask"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:text="Start Managing Your Task"
-        />
+        android:layout_marginTop="80dp"
+        android:layout_below="@+id/txtRegPassWord"
+        android:text="Start Managing Your Task" />
 
 
-</LinearLayout>
+</RelativeLayout>

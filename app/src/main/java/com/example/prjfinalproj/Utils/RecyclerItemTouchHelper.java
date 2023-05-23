@@ -7,13 +7,16 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.prjfinalproj.Adapter.ToDoAdapter;
+import com.example.prjfinalproj.Main.MainActivity;
 import com.example.prjfinalproj.R;
+import com.example.prjfinalproj.Tasks.Tasks;
 
 public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
     private ToDoAdapter adapter;
@@ -39,6 +42,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
             builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                    Toast.makeText(builder.getContext(), "Removed Sucessfully!", Toast.LENGTH_SHORT).show();
                     adapter.deleteItem(position);
                 }
             });

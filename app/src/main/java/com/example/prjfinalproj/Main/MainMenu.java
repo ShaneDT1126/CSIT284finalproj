@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.prjfinalproj.Tasks.Tasks;
 import com.example.prjfinalproj.R;
-import com.example.prjfinalproj.databinding.ActivityMainBinding;
 
 public class MainMenu extends AppCompatActivity implements View.OnClickListener {
     TextView txtManage;
@@ -83,7 +82,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
             case R.id.txtNotifyMe:
                 Toast.makeText(this, "Reminder Set!", Toast.LENGTH_SHORT).show();
                 Intent i7 = new Intent(MainMenu.this,Reminder.class);
-                PendingIntent pi = PendingIntent.getBroadcast(MainMenu.this,0,i7,0);
+                PendingIntent pi = PendingIntent.getBroadcast(MainMenu.this, 0, i7, PendingIntent.FLAG_IMMUTABLE);
                 AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
 
                 long timeAtButtonClick = System.currentTimeMillis();

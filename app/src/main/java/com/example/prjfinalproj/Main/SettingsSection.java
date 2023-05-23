@@ -14,10 +14,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.prjfinalproj.R;
-import com.example.prjfinalproj.databinding.ActivityMainBinding;
 
 public class SettingsSection extends AppCompatActivity implements View.OnClickListener {
-    Button btnLogout,btnRate;
+    Button btnLogout,btnRate, btnBackToMenu5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,9 @@ public class SettingsSection extends AppCompatActivity implements View.OnClickLi
 
         btnLogout = findViewById(R.id.btnLogout);
         btnRate = findViewById(R.id.btnRate);
+        btnBackToMenu5 = findViewById(R.id.btnBackToMenu5);
 
+        btnBackToMenu5.setOnClickListener(this);
         btnLogout.setOnClickListener(this);
         btnRate.setOnClickListener(this);
     }
@@ -48,6 +49,10 @@ public class SettingsSection extends AppCompatActivity implements View.OnClickLi
                 } catch (Exception e) {
                     Toast.makeText(this,"Something went wrong\n"+e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
+                break;
+            case R.id.btnBackToMenu5:
+                Intent i3 = new Intent(SettingsSection.this,MainMenu.class);
+                startActivity(i3);
                 break;
         }
     }
