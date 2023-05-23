@@ -65,7 +65,7 @@
         android:layout_gravity="center"
         android:background="@null"
         android:onClick="newEventAction"
-        android:text="Create New Task"
+        android:text="New Notes"
         android:textColor="@color/lightGray"
         android:textSize="20sp"
         android:textStyle="bold" />
