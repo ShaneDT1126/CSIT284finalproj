@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.prjfinalproj.Calendar.CalendarMainActivity;
 import com.example.prjfinalproj.Tasks.Tasks;
 import com.example.prjfinalproj.R;
 
@@ -62,7 +64,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
                 break;
 
             case R.id.txtCalendar:
-                Intent i2 = new Intent(MainMenu.this,CalendarSection.class);
+                Intent i2 = new Intent(MainMenu.this, CalendarMainActivity.class);
                 startActivity(i2);
                 break;
 

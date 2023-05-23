@@ -33,6 +33,18 @@
             android:name=".GoalSetting.Goals"
             android:exported="false" />
         <activity
+            android:name=".Calendar.CalendarMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar.DailyCalendarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar.WeekViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar.EventEditActivity"
+            android:exported="false" />
+        <activity
             android:name=".Main.SettingsSection"
             android:exported="false" />
         <activity
